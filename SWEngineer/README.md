@@ -46,6 +46,6 @@
    ```
 3. **애플리케이션 실행**:
    ```bash
-   streamlit run SWEngineer/test.py
+   streamlit run SWEngineer/app.py
    ```
 4. **PDF 업로드 및 쿼리 입력**: 애플리케이션 실행 후 UI를 통해 PDF 파일을 업로드하고 질문을 입력하면 결과를 확인할 수 있습니다.
