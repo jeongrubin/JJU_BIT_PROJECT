@@ -1,0 +1,8 @@
+langchain-chroma
+langchain-openai
+langchain-teddynote
+langchain-community
+langchain-experimental
+pymupdf
+python-dotenv
+chromadb
