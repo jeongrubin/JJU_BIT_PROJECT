@@ -79,11 +79,12 @@ def generate_response(query, mmr_docs):
     print("Generating response...")
     answer = chain.stream(question)
 
-    st.markdown(f"<p style='font-size:20px;'>{query}</p>")
+    st.markdown(f"<p style='font-size:20px;'>{query}</p>", unsafe_allow_html=True)
     st.markdown(f"<p style='font-size:18px;'>Response: {stream_response(answer, return_output=True)}</p>", unsafe_allow_html=True)
 
 def main_streamlit():
     global global_db, mmr_docs_cache
+    load_dotenv()
 
     st.set_page_config(page_title="Semantic Analysis", page_icon="🔬", layout="wide")
 
@@ -112,8 +113,6 @@ def main_streamlit():
         texts = process_pdf(temp_file_path)
 
         try:
-            load_dotenv()
-
             if global_db is None:
                 global_db = create_vector_database(texts)
                 mmr_docs_cache = None  # Reset cache when new DB is created
