@@ -3,6 +3,7 @@ langchain-openai
 langchain-teddynote
 langchain-community
 langchain-experimental
+streamlit
 pymupdf
 python-dotenv
 chromadb
