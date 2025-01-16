@@ -9,6 +9,12 @@ from langchain_openai import ChatOpenAI
 from langchain_teddynote.messages import stream_response
 import streamlit as st
 import time
+import pysqlite3
+import sys
+
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+
+import sqlite3
 
 def process_pdf(pdf_filepath):
     """Processes the uploaded PDF file and splits its content into semantic chunks."""
@@ -115,7 +121,12 @@ def main_streamlit():
 
     uploaded_file = st.sidebar.file_uploader("Upload a PDF file", type=["pdf"])
 
+    st.markdown("""
+    <h3 style='text-align:right;'>Jeonju-University</h2>
+    """, unsafe_allow_html=True)
+
     st.title("🔬 Semantic Analysis with LangChain")
+
     st.markdown("""
     This application allows you to upload a PDF, analyze its content, and retrieve information using natural language queries.
     
