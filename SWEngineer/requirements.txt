@@ -7,3 +7,4 @@ streamlit
 pymupdf
 python-dotenv
 chromadb
+pymongo
