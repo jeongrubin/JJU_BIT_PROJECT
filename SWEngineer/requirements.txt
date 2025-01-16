@@ -4,7 +4,7 @@ langchain-teddynote
 langchain-community
 langchain-experimental
 
-dotenv
+python-dotenv
 streamlit
 pymupdf
 python-dotenv
