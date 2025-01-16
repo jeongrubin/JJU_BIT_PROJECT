@@ -9,6 +9,12 @@ from langchain_openai import ChatOpenAI
 from langchain_teddynote.messages import stream_response
 import streamlit as st
 import time
+import pysqlite3
+import sys
+
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+
+import sqlite3
 
 def process_pdf(pdf_filepath):
     """Processes the uploaded PDF file and splits its content into semantic chunks."""
